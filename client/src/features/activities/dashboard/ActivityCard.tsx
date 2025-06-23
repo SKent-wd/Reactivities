@@ -56,7 +56,7 @@ export default function ActivityCard({ activity }: Props) {
           Attendees go here
         </Box>
       </CardContent>
-      <CardContent sx={{ pb: 2 }}>
+      <CardContent sx={{ display: 'flex', justifyContent: 'space-between', pb: 2 }}>
         <Typography variant="body2">
           {activity.description}
         </Typography>
