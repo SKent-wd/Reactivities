@@ -9,7 +9,7 @@ type Props = {
     activity: Activity;
 }
 
-export default function ActivityDetailsInfo({activity}: Props) {
+export default function ActivityDetailsInfo({ activity }: Props) {
     const [mapOpen, setMapOpen] = useState(false);
 
     return (
@@ -42,16 +42,16 @@ export default function ActivityDetailsInfo({activity}: Props) {
                     <Typography>
                         {activity.venue}, {activity.city}
                     </Typography>
-                    <Button onClick={() => setMapOpen(!mapOpen)}>
+                    <Button sx={{ whiteSpace: 'nowrap', mx: 2 }} onClick={() => setMapOpen(!mapOpen)}>
                         {mapOpen ? 'Hide map' : 'Show map'}
                     </Button>
                 </Grid2>
             </Grid2>
             {mapOpen && (
-                <Box sx={{height: 400, zIndex: 1000, display: 'block'}}>
-                    <MapComponent 
-                        position={[activity.latitude, activity.longitude]} 
-                        venue={activity.venue} 
+                <Box sx={{ height: 400, zIndex: 1000, display: 'block' }}>
+                    <MapComponent
+                        position={[activity.latitude, activity.longitude]}
+                        venue={activity.venue}
                     />
                 </Box>
             )}
